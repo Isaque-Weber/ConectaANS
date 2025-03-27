@@ -1,0 +1,94 @@
+# ----
+# Arquivos Python que não devem ser versionados
+# ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.installed.cfg
+
+# ----
+# Ambientes virtuais
+# ----
+env/
+venv/
+ENV/
+.venv/
+venv.bak/
+env.bak/
+
+# ----
+# Logs e arquivos temporários
+# ----
+*.log
+*.cache
+*.temp
+*.pid
+*.swp
+
+# ----
+# Ferramentas de testes e cobertura
+# ----
+.tox/
+.coverage
+.coverage.*
+.cache
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+pytest_cache/
+
+# ----
+# Notebooks Jupyter
+# ----
+.ipynb_checkpoints
+
+# ----
+# PyInstaller
+# ----
+*.spec
+
+# ----
+# mypy
+# ----
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ----
+# Pyre type checker
+# ----
+.pyre/
+
+# ----
+# VS Code
+# ----
+.vscode/
+.history/
+
+# ----
+# macOS
+# ----
+.DS_Store
+
+# ----
+# Windows
+# ----
+Thumbs.db
