@@ -24,5 +24,7 @@ O projeto **ConectaANS** foi nomeado para facilitar a identificação de seu pro
 ## Contato Rápido
 
 Nome: Isaque Weber
-[![E-mail](https://img.shields.io/badge/E--mail-isaqueweber%40yahoo.com.br-blue)](mailto:isaqueweber@yahoo.com.br)  
+
+[![E-mail](https://img.shields.io/badge/E--mail-isaqueweber%40yahoo.com.br-blue)](mailto:isaqueweber@yahoo.com.br) 
+
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Contato-brightgreen)](https://wa.me/552196798707)
