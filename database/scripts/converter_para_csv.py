@@ -21,7 +21,7 @@ def converter_zip_para_csv(diretorio_zip, diretorio_csv):
                             with arquivo_zip.open(nome_arquivo_interno) as arquivo_csv_zip:
                                 try:
                                     # Tenta ler o CSV diretamente do arquivo ZIP
-                                    df = pd.read_csv(arquivo_csv_zip, encoding='latin1', sep=';')
+                                    df = pd.read_csv(arquivo_csv_zip, encoding='utf-8', sep=';')
                                     nome_arquivo_csv = os.path.splitext(nome_arquivo)[0] + ".csv"
                                     caminho_csv = os.path.join(diretorio_csv, nome_arquivo_csv)
                                     df.to_csv(caminho_csv, index=False, encoding='utf-8', sep=';')
