@@ -80,13 +80,8 @@ O script:
 └── (outras partes do projeto)
 ```
 
-## Solução de Problemas
+## Solução de Possíveis Problemas
 
 - Nenhum PDF baixado: Revise os critérios de filtragem do script conforme a nomenclatura atual dos arquivos.
 - Erros de conexão: Verifique sua conexão com a internet e o acesso ao site.
 - Problemas de permissão: Assegure que o script tenha permissão para criar e escrever na pasta "docs".
-
-## Contato
-
-Nome: Isaque Weber   
-E-mail: isaqueweber@yahoo.com.br

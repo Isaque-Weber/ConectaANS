@@ -35,9 +35,9 @@ conecta_ans/
 * **Python 3.x:** Necessário para executar os scripts Python. Recomenda-se usar um gerenciador de ambientes como o `venv` para isolar as dependências do projeto.
 * **Bibliotecas Python:** As seguintes bibliotecas são necessárias e podem ser instaladas usando o pip (gerenciador de pacotes do Python).
 * **Acesso à Internet:** Para baixar os arquivos dos servidores da ANS.
-* **Banco de Dados:** Um servidor de banco de dados MySQL 8.x ou PostgreSQL > 10.0 instalado e em execução.
+* **Banco de Dados:** Um servidor de banco de dados PostgreSQL > 10.0 instalado e em execução.
 * **Docker (Opcional):** Se você pretende usar um contêiner Docker para rodar o PostgreSQL, como mencionado durante o desenvolvimento.
-* **Cliente SQL:** Uma ferramenta para se conectar ao seu banco de dados (e.g., pgAdmin, MySQL Workbench, DBeaver).
+* **Cliente SQL:** Uma ferramenta para se conectar ao seu banco de dados (e.g., pgAdmin, MySQL Workbench, DBeaver) no ambiente de desenvolvimento eu utilizei o SQLTools do vscode.
 
 ### Configuração do Ambiente de Desenvolvimento
 
@@ -45,7 +45,7 @@ Para configurar o ambiente de desenvolvimento e rodar este projeto, siga os pass
 
 1.  **Clonar o Repositório:**
     ```bash
-    git clone <URL_do_seu_repositório>
+    git clone https://github.com/Isaque-Weber/ConectaANS
     cd conecta_ans
     ```
 
@@ -57,20 +57,16 @@ Para configurar o ambiente de desenvolvimento e rodar este projeto, siga os pass
     ```
 
 3.  **Instalar as Dependências:**
-    Crie o arquivo `requirements.txt` com o seguinte conteúdo:
-    ```
-    requests
-    python-dateutil
-    pandas
-    ```
-    E execute:
+    Execute o arquivo `requirements.txt` :
+    
     ```bash
     pip install -r requirements.txt
     ```
 
 4.  **Configurar o Banco de Dados:**
     * **Certifique-se de que seu servidor MySQL ou PostgreSQL esteja rodando.** Se estiver usando Docker para PostgreSQL, siga as instruções da seção anterior no README.
-    * **Crie um banco de dados** onde as tabelas serão criadas (você pode usar a linha de comando ou um cliente SQL para isso).
+    * **Crie um banco de dados** onde as tabelas serão criadas (você pode usar a linha de comando ou um cliente SQL para isso). 
+    OBS:crie o BD e depois, é só seguir o passo a passo dos scripts SQL
 
 ### Como Utilizar
 
@@ -90,16 +86,3 @@ Para configurar o ambiente de desenvolvimento e rodar este projeto, siga os pass
         1.  `setup_tables.sql`: Cria as tabelas necessárias no banco de dados para armazenar os dados da ANS. Certifique-se de que o banco de dados esteja vazio antes de executar este script.
         2.  `import_data.sql`: Importa os dados dos arquivos CSV localizados nas pastas `dados_ans/csv_demonstracoes/` e `dados_ans/dados_cadastrais/` para as tabelas criadas. **Ajuste os caminhos dos arquivos CSV no script, se necessário.**
         3.  `analitc_query.sql`: Contém consultas analíticas para responder a perguntas como "Quais foram as maiores despesas das operadoras no último trimestre?" e "Quais operadoras tiveram maior crescimento no último ano?". Execute este script após a importação dos dados.
-
-### Observações
-
-* Os arquivos de demonstrações contábeis são baixados em formato ZIP e contêm arquivos CSV com codificação `latin1` e separador `;`. O script de conversão tenta lidar com isso, mas pode ser necessário ajustar a codificação ou o separador caso encontre problemas.
-* A URL para os dados cadastrais das operadoras ativas pode mudar. O script `scripts/download_ans_data.py` utiliza o link fornecido, mas é importante verificar se o link ainda é válido caso o download falhe. A URL utilizada no momento é: `https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/Relatorio_cadop.csv`.
-* O script de download das demonstrações contábeis está configurado para baixar os arquivos dos anos de 2023 e 2024. Para incluir mais anos, você pode modificar a função `baixar_demonstracoes_contabeis` no arquivo `scripts/download_ans_data.py`.
-* **Importante:** Os scripts SQL na pasta `sql/` são fornecidos como um guia. Você precisará adaptá-los para corresponder à estrutura exata dos arquivos CSV (nomes de colunas, tipos de dados, etc.) e aos detalhes da sua instalação do banco de dados.
-
-### Próximos Passos
-
-* **Preencher os arquivos SQL** com as queries necessárias para criar as tabelas, importar os dados e realizar a análise.
-
-Este README agora descreve a estrutura do projeto de forma mais completa, incluindo a pasta `sql/` e a finalidade de cada um dos arquivos SQL. Ele também enfatiza a necessidade de configurar o banco de dados e executar os scripts SQL na ordem correta, além de alertar para a possível necessidade de adaptar os scripts SQL aos detalhes do ambiente.
